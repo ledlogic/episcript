@@ -27,6 +27,7 @@ st.story = {
 	},
 	hideStory: function() {
 		var that = st.story;
+		that.$pagecr.hide();
 	},
 	loadStoryJson: function(uri) {
 		st.log("loading story from json");
@@ -36,7 +37,7 @@ st.story = {
 				that.spec = data;
 				var initialId = that.spec.initialId;
 				that.currentId = initialId;
-				setTimeout(st.story.render, 10);
+				setTimeout(st.story.renderStory, 10);
 			})
 			.fail(function() {
 				alert("Error: unable to load story. [30]");
@@ -45,12 +46,16 @@ st.story = {
 			})
 		;
 	},
+	renderStory: function() {
+		var that = st.story;
+		that.renderReset();
+		that.render();
+		that.$pagecr.show();
+	},
 	gotoId: function(nextId) {
 		var that = st.story;
 		that.currentId = nextId;
-		
-		that.renderReset();
-		that.render();
+		that.renderStory();
 	},
 	render: function() {
 		st.log("rendering story");

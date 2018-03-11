@@ -52,6 +52,7 @@ st.nav = {
 		if (uri) {
 			st.story.loadStory(uri);
 		} else {
+			st.story.renderReset();
 			st.story.hideStory();
 		}
 	},
