@@ -32,17 +32,25 @@ st.story = {
 		st.log("loading story from json");
 		var that = st.story;
 		$.ajax("js/data/" + uri)
-		.done(function(data, status, jqxhr) {
-			that.spec = data;
-			var initialId = that.spec.initialId;
-			that.currentId = initialId;
-			setTimeout(st.story.render, 10);
-		})
-		.fail(function() {
-			alert("Error: unable to load story. [30]");
-		})
-		.always(function() {
-		});
+			.done(function(data, status, jqxhr) {
+				that.spec = data;
+				var initialId = that.spec.initialId;
+				that.currentId = initialId;
+				setTimeout(st.story.render, 10);
+			})
+			.fail(function() {
+				alert("Error: unable to load story. [30]");
+			})
+			.always(function() {
+			})
+		;
+	},
+	gotoId: function(nextId) {
+		var that = st.story;
+		that.currentId = nextId;
+		
+		that.renderReset();
+		that.render();
 	},
 	render: function() {
 		st.log("rendering story");
@@ -52,12 +60,16 @@ st.story = {
 			alert("Error: unable to find initial part. [47]");
 		}
 		var $h = that.$pagecr;
-		st.part.renderPart($h, currentPart);
+		var h = st.part.renderPart(currentPart);
+		$h.append(h);
+		$("a.st-story-goto").on("click", st.part.clickGoto);
 		$(".st-page").removeClass("st-initial-state");
 	},
 	renderReset: function() {
 		st.log("render reset");
-		st.story.$pageft.html("");
+		var that = st.story;
+		var $h = that.$pagecr;
+		$h.html("");
 	},
 	findCurrentPart: function() {
 		var that = st.story;
