@@ -8,6 +8,7 @@ var st = {
 
 	init: function() {
 		st.story.init();
+		st.part.init();
 		st.nav.init();
 	}
 };
