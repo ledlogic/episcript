@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset='UTF-8' />
+	<meta name="viewport" content="width=device-width" />
+	<title>Story editor</title>
+	<link rel="stylesheet" type="text/css" href="css/lib/bootstrap/3.3.7/bootstrap.min.css" />
+	<link rel="stylesheet" type="text/css" href="css/lib/bootstrap/3.3.7/bootstrap-theme.min.css" />
+	<link rel="stylesheet" type="text/css" href="css/st/st.css" />
+	<link rel="stylesheet" type="text/css" href="css/st/st-story.css" />
+	<link rel="stylesheet" type="text/css" href="css/st/st-print.css" media="print" />
+</head>
+<body class="no-border">
+	<h1>Story</h1>
+	<div class="st-nav row">
+		<div class="col-md-6">
+			<div class="st-nav-story">
+				<label for="st-select-story">Load:</label>
+				<select id="st-select-story">
+					<option>Select one...</option>
+				</select>
+			</div>
+		</div>
+		<div class="col-md-6">
+		</div>
+	</div>
+	
+	<div class="st-page st-initial-state">
+		<div class="st-page-bk">
+		</div>
+		<div class="st-page-cr">
+		</div>
+		<div class="st-page-ft">
+		</div>
+	</div>
+	
+	<h4 class="st-footer">Story - <a href="https://github.com/ledlogic/episcript">https://github.com/ledlogic/episcript</a></h4>
+</body>
+<script type="text/javascript" src="js/lib/jquery/1.11.2/jquery-1.11.2.min.js"></script>
+<script type="text/javascript" src="js/lib/bootstrap/3.3.7/bootstrap.min.js"></script>
+<script type="text/javascript" src="js/lib/underscore/1.7.0/underscore-1.7.0-min.js"></script>
+<script type="text/javascript" src="js/lib/papaparse/4.1.2/papaparse.min.js"></script>
+<script type="text/javascript" src="js/lib/lettering/0.7.0/jquery.lettering.js"></script>
+
+<script type="text/javascript" src="js/st/st.js"></script>
+<script type="text/javascript" src="js/st/st-nav.js"></script>
+<script type="text/javascript" src="js/st/st-story.js"></script>
+<script type="text/javascript" src="js/st/st-util.js"></script>
+</html>
