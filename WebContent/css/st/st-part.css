@@ -3,3 +3,8 @@
 .st-story-navigation {
 	border-top: 1px solid purple;
 }
+
+.st-story-navigation ul li {
+	display: block;
+	list-style: none;
+}

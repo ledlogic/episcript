@@ -58,13 +58,13 @@ st.part = {
 	},
 	renderNavigationPart: function(part) {
 		var that = st.part;
-		var h = "<div class=\"st-story-part st-story-navigation\"><h4>" + part.text + "</h4>\n";
+		var h = "<div class=\"st-story-part st-story-navigation\"><h4>" + part.text + "</h4><ul>\n";
 		h += that.renderSubparts(part);
-		h += "</div>";
+		h += "</ul></div>";
 		return h;
 	},
 	renderGotoPart: function(part) {
-		var h = "<a href=\"#\" class=\"st-story-part st-story-goto\" data-goto-id=\"" + part.nextId + "\">" + part.text + "</a>\n";
+		var h = "<li><a href=\"#\" class=\"st-story-part st-story-goto\" data-goto-id=\"" + part.nextId + "\">" + part.text + "</a></li>\n";
 		return h;
 	}
 }

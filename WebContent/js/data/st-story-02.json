@@ -1,0 +1,149 @@
+{
+	"name": "Gatecrash",
+	"parts": [
+		{
+			"type": "chapter",
+			"version": 1,
+			"id": "101",
+
+			"parts": [
+				{
+					"id": "103",
+					"type": "paragraph",
+					"text": "You are in a research facility built around a gate discovered deep under the surface of Ceres.  You have been here for one week.  Every day, the exploratory team is supposed to check in at a specific time.  They made the call on the first three days, but have not checked in yesterday or today.",
+					"version": 1
+				},
+				{
+					"id": "105",
+					"type": "navigation",
+					"text": "Navigation",
+					"version": 1,
+					"parts": [
+						{
+							"id": "106",
+							"nextId": "201",
+							"text": "Wait another day for results",
+							"type": "goto",
+							"version": 1
+						},
+												{
+							"id": "107",
+							"nextId": "301",
+							"text": "Send in a robot probe into the gate",
+							"type": "goto",
+							"version": 1
+						},
+						{
+							"id": "108",
+							"nextId": "401",
+							"text": "Send a manned team into the gate",
+							"type": "goto",
+							"version": 1
+						}
+					]
+				}
+			]
+		},
+		{
+			"type": "chapter",
+			"version": 1,
+			"id": "201",
+
+			"parts": [
+				{
+					"id": "203",
+					"type": "paragraph",
+					"text": "You wait another day for results.  Still no results.",
+					"version": 1
+				},
+				{
+					"id": "204",
+					"type": "navigation",
+					"text": "Navigation",
+					"version": 1,
+					"parts": [
+						{
+							"id": "205",
+							"nextId": "201",
+							"text": "Wait another day for results",
+							"type": "goto",
+							"version": 1
+						},
+												{
+							"id": "206",
+							"nextId": "301",
+							"text": "Send in a robot probe into the gate",
+							"type": "goto",
+							"version": 1
+						},
+						{
+							"id": "207",
+							"nextId": "401",
+							"text": "Send a manned team into the gate",
+							"type": "goto",
+							"version": 1
+						}
+					]
+				}
+			]
+		},
+		{
+			"type": "chapter",
+			"version": 1,
+			"id": "301",
+
+			"parts": [
+				{
+					"id": "303",
+					"type": "paragraph",
+					"text": "The robot probe enters the gate and disappears.  It does not respond at the appointed time.  You fear it is lost.",
+					"version": 1
+				},
+				{
+					"id": "204",
+					"type": "navigation",
+					"text": "Navigation",
+					"version": 1,
+					"parts": [
+						{
+							"id": "205",
+							"nextId": "201",
+							"text": "Wait another day for results",
+							"type": "goto",
+							"version": 1
+						},
+						{
+							"id": "207",
+							"nextId": "401",
+							"text": "Send a manned team into the gate",
+							"type": "goto",
+							"version": 1
+						}
+					]
+				}
+			]
+		},
+		{
+			"type": "chapter",
+			"version": 1,
+			"id": "401",
+
+			"parts": [
+				{
+					"id": "402",
+					"type": "paragraph",
+					"text": "You enter the gate.  You find the previous team has been attacked by a fungus.  You bring them back and study the fungus.  Good job.",
+					"version": 1
+				},
+				{
+					"id": "403",
+					"type": "paragraph",
+					"text": "THE END",
+					"version": 1
+				}
+			]
+		}	
+	],
+	"initialId": 101,
+	"version": 1
+}
