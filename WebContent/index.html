@@ -7,18 +7,35 @@
 	<link rel="stylesheet" type="text/css" href="css/lib/bootstrap/3.3.7/bootstrap.min.css" />
 	<link rel="stylesheet" type="text/css" href="css/lib/bootstrap/3.3.7/bootstrap-theme.min.css" />
 	<link rel="stylesheet" type="text/css" href="css/st/st.css" />
+	<link rel="stylesheet" type="text/css" href="css/st/st-nav.css" />
 	<link rel="stylesheet" type="text/css" href="css/st/st-part.css" />
 	<link rel="stylesheet" type="text/css" href="css/st/st-story.css" />
 	<link rel="stylesheet" type="text/css" href="css/st/st-print.css" media="print" />
 </head>
-<body class="no-border">
+<body class="no-border st-story-edit-on">
 	<h1>Story</h1>
+
 	<div class="st-nav row">
 		<div class="col-md-6">
 			<div class="st-nav-story">
 				<label for="st-select-story">Load:</label>
 				<select id="st-select-story">
 					<option>Select one...</option>
+				</select>
+			</div>
+		</div>
+		<div class="col-md-6">
+		</div>
+	</div>
+	
+	<div class="st-nav row">
+		<div class="col-md-6">
+			<div class="st-nav-mode">
+				<label for="st-select-mode">Mode:</label>
+				<select id="st-select-mode">
+					<option>Select one...</option>
+					<option value="edit" selected="selected">Edit</option>
+					<option value="view">View</option>
 				</select>
 			</div>
 		</div>

@@ -8,6 +8,19 @@
 
 			"parts": [
 				{
+					"id": "020",
+					"type": "variable",
+					"name": "robot-quantity",
+					"value": "1",
+					"version": 1
+				},
+				{
+					"id": "102",
+					"type": "heading",
+					"text": "Gatecrash",
+					"version": 1
+				},
+				{
 					"id": "103",
 					"type": "paragraph",
 					"text": "You are in a research facility built around a gate discovered deep under the surface of Ceres.  You have been here for one week.  Every day, the exploratory team is supposed to check in at a specific time.  They made the call on the first three days, but have not checked in yesterday or today.",
@@ -31,6 +44,7 @@
 							"nextId": "301",
 							"text": "Send in a robot probe into the gate",
 							"type": "goto",
+							"condition": "robot-quantity>0",
 							"version": 1
 						},
 						{

@@ -1,4 +1,5 @@
 /* st-nav.js */
+
 st.nav = {
 	stories: [],
 	init: function() {
@@ -6,6 +7,7 @@ st.nav = {
 
 		$(".st-nav-link").click(st.nav.click);
 		$("#st-select-story").bind("change", st.nav.selectStory);
+		$("#st-select-mode").bind("change", st.nav.selectMode);
 		st.nav.loadStories();
 	},
 	click: function() {
@@ -55,6 +57,13 @@ st.nav = {
 			st.story.renderReset();
 			st.story.hideStory();
 		}
+	},
+	selectMode: function() {
+		st.log("selected mode");
+		
+		var $sel = $(this);
+		var val = $sel.find("option:selected").attr("value");
+		st.story.setMode(val);
 	},
 	showLinks: function() {
 		$(".st-nav-links").show();

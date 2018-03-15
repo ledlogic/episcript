@@ -1,10 +1,12 @@
 /* st-story.js */
+
 st.story = {
 	currentId: null,
 	initialId: null,
 	$pagecr: null,
 	$pageft: null,
 	spec: {},
+	vars: {},
 	
 	init: function() {
 		st.log("init story");
@@ -92,5 +94,13 @@ st.story = {
 			}
 		}
 		return null;
+	},
+	setMode: function(mode) {
+		var that = st.story;
+		if ("edit" === mode) {
+			$("body").addClass("st-story-edit-on");
+		} else {
+			$("body").removeClass("st-story-edit-on");
+		}
 	}
 };

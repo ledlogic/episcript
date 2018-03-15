@@ -8,3 +8,40 @@
 	display: block;
 	list-style: none;
 }
+
+.st-story-part {
+	position: relative;
+}
+
+.st-story-goto {
+	border: none;
+}
+
+.st-story-edit-on .st-story-part {
+	border: 1px solid #e2e2e2;
+}
+
+.st-story-edit-on .st-story-part {
+	border: 1px solid #e2e2e2;
+}
+
+.st-story-edit-id  {
+	border: 1px solid #c2c2c2;
+	color: 1px solid #c2c2c2;
+	display: none;
+	float: left;
+	font-size: 10px;
+	margin: 0 1em 0 1em;
+}
+
+.st-story-edit-on .st-story-edit-id {
+	display: inline-block;
+}
+
+.st-story-variable {
+	display: none;
+}
+
+.st-story-edit-on .st-story-variable {
+	display: inline-block;
+}

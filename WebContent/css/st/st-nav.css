@@ -1,0 +1,64 @@
+/* st-nav.css */
+
+.st-nav-story .progress {
+	display: none;
+}
+
+.st-nav {
+	height: 30px;
+	margin: 8px 0 8px 0;
+	padding: 2px;
+	width: 100%;
+}
+
+.st-nav .col-md-6 {
+	padding-left: 0;
+	padding-right: 0;
+}
+
+.st-nav ul li {
+	display: inline-block;
+	height: 8px;
+	margin: 0 0 0 8px;
+	text-transform: uppercase;
+}
+
+.st-nav a, .st-nav label,.st-nav select {
+	font-size: 12px;
+}
+
+.st-nav label {
+	text-align: right;
+	width: 20%;
+}
+
+.st-nav select {
+	text-align: right;
+}
+
+.st-nav-links {
+	display: none; /* initially hidden */
+	float: right;
+	text-align: right;
+	width: 50%;
+}
+
+.st-nav-link {
+	color: #ac2629;
+}
+
+.st-nav-link:hover {
+	color: #ff9999;
+}
+
+.st-nav-link.st-nav-link-active {
+	background: #ac2629;
+	color: #ffffff;
+	cursor: default;
+	text-decoration: none;
+}
+
+.st-nav-link.st-nav-link-active:hover {
+	color: #ffffff;
+	text-decoration: none;
+}
