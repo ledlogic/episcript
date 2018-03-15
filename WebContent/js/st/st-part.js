@@ -102,20 +102,26 @@ st.part = {
 	renderVarPart: function(part) {
 		var that = st.part;
 		var story = st.story;
-		story.vars[part.name] = part.value;
+		var vars = story.vars;
+		var val = part.value.replace(/\[/g, "\[\'").replace(/\]/g, "\'\]");
+		st.log("val[" + val + "]");
+		var res = eval(val);
+		st.log("res[" + res + "]");
+		vars[part.name] = res;
+		var slugname = _.slugify(part.name);
 		var h = "<div class=\"st-story-part st-story-variable\">"
 			+ that.renderIdPart(part)		
 			+ part.name
 			+ "="
-			+ part.value
-			+ "[<span class=\"st-var-" + (_.slugify(part.name)) + "\">" + (story.vars[part.name]) + "</span>]"
+			+ res
+			+ "[<span class=\"st-var-" + slugname + "\">" + res + "</span>]"
 			+ "</div>\n";
 		return h;
 	},
 	isPartSatisfied: function(part) {
 		st.log("checking isPartSatisfied, part.id[" + part.id + "]");
 		var story = st.story;
-		var vars = story.vars
+		var vars = story.vars;
 
 		// default is true, optimistic
 		var ret = true;
@@ -123,7 +129,7 @@ st.part = {
 		// if condition, evaluate it in the current variable context.
 		if (part.condition) {
 			var cond = part.condition.replace(/\[/g, "\[\'").replace(/\]/g, "\'\]");
-			st.log(cond)
+			st.log("cond[" + cond + "]")
 			ret = eval(cond);
 			st.log("ret[" + ret + "]");
 		}

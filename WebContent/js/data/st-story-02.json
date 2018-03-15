@@ -15,6 +15,13 @@
 					"version": 1
 				},
 				{
+					"id": "021",
+					"type": "var",
+					"name": "days-quantity",
+					"value": "5",
+					"version": 1
+				},
+				{
 					"id": "102",
 					"type": "heading",
 					"text": "Gatecrash",
@@ -65,6 +72,13 @@
 
 			"parts": [
 				{
+					"id": "202",
+					"type": "var",
+					"name": "days-quantity",
+					"value": "vars[days-quantity]-1",
+					"version": 1
+				},
+				{
 					"id": "203",
 					"type": "paragraph",
 					"text": "You wait another day for results.  Still no results.",
@@ -112,37 +126,44 @@
 					"id": "302",
 					"type": "var",
 					"name": "robot-quantity",
-					"value": "0",
+					"value": "vars[robot-quantity]-1",
 					"version": 1
 				},
 				{
 					"id": "303",
-					"type": "paragraph",
-					"text": "The robot probe enters the gate and disappears.  It does not respond at the appointed time.  You fear it is lost.",
+					"type": "var",
+					"name": "days-quantity",
+					"value": "vars[days-quantity]-1",
 					"version": 1
 				},
 				{
-					"id": "204",
+					"id": "304",
+					"type": "paragraph",
+					"text": "The robot probe enters the gate and disappears.  It does not respond within 24 hours.  You fear it is lost.",
+					"version": 1
+				},
+				{
+					"id": "305",
 					"type": "navigation",
 					"text": "Navigation",
 					"version": 1,
 					"parts": [
 						{
-							"id": "205",
+							"id": "306",
 							"nextId": "201",
 							"text": "Wait another day for results",
 							"type": "goto",
 							"version": 1
 						},
 						{
-							"id": "206",
+							"id": "307",
 							"nextId": "501",
 							"text": "Assemble another robot for the mission",
 							"type": "goto",
 							"version": 1
 						},
 						{
-							"id": "207",
+							"id": "308",
 							"nextId": "401",
 							"text": "Send a manned team into the gate",
 							"type": "goto",
@@ -187,12 +208,19 @@
 				},
 				{
 					"id": "503",
+					"type": "var",
+					"name": "days-quantity",
+					"value": "vars[days-quantity]-1",
+					"version": 1
+				},
+				{
+					"id": "504",
 					"type": "paragraph",
 					"text": "You read the instructions, assemble the parts, and successfully build another robot.",
 					"version": 1
 				},
 				{
-					"id": "504",
+					"id": "505",
 					"type": "navigation",
 					"text": "Navigation",
 					"version": 1,
