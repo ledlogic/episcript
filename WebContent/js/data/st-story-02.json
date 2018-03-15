@@ -9,7 +9,7 @@
 			"parts": [
 				{
 					"id": "020",
-					"type": "variable",
+					"type": "var",
 					"name": "robot-quantity",
 					"value": "1",
 					"version": 1
@@ -44,7 +44,7 @@
 							"nextId": "301",
 							"text": "Send in a robot probe into the gate",
 							"type": "goto",
-							"condition": "robot-quantity>0",
+							"condition": "vars[robot-quantity]>0",
 							"version": 1
 						},
 						{
@@ -83,11 +83,12 @@
 							"type": "goto",
 							"version": 1
 						},
-												{
+						{
 							"id": "206",
 							"nextId": "301",
 							"text": "Send in a robot probe into the gate",
 							"type": "goto",
+							"condition": "vars[robot-quantity]>0",
 							"version": 1
 						},
 						{
@@ -108,6 +109,13 @@
 
 			"parts": [
 				{
+					"id": "302",
+					"type": "var",
+					"name": "robot-quantity",
+					"value": "0",
+					"version": 1
+				},
+				{
 					"id": "303",
 					"type": "paragraph",
 					"text": "The robot probe enters the gate and disappears.  It does not respond at the appointed time.  You fear it is lost.",
@@ -123,6 +131,13 @@
 							"id": "205",
 							"nextId": "201",
 							"text": "Wait another day for results",
+							"type": "goto",
+							"version": 1
+						},
+						{
+							"id": "206",
+							"nextId": "501",
+							"text": "Assemble another robot for the mission",
 							"type": "goto",
 							"version": 1
 						},
@@ -154,6 +169,57 @@
 					"type": "paragraph",
 					"text": "THE END",
 					"version": 1
+				}
+			]
+		},
+		{
+			"type": "chapter",
+			"version": 1,
+			"id": "501",
+
+			"parts": [
+				{
+					"id": "502",
+					"type": "var",
+					"name": "robot-quantity",
+					"value": "1",
+					"version": 1
+				},
+				{
+					"id": "503",
+					"type": "paragraph",
+					"text": "You read the instructions, assemble the parts, and successfully build another robot.",
+					"version": 1
+				},
+				{
+					"id": "504",
+					"type": "navigation",
+					"text": "Navigation",
+					"version": 1,
+					"parts": [
+						{
+							"id": "506",
+							"nextId": "201",
+							"text": "Wait another day for results",
+							"type": "goto",
+							"version": 1
+						},
+						{
+							"id": "507",
+							"nextId": "301",
+							"text": "Send in a robot probe into the gate",
+							"type": "goto",
+							"condition": "vars[robot-quantity]>0",
+							"version": 1
+						},
+						{
+							"id": "508",
+							"nextId": "401",
+							"text": "Send a manned team into the gate",
+							"type": "goto",
+							"version": 1
+						}
+					]
 				}
 			]
 		}	

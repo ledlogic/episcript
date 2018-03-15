@@ -35,8 +35,8 @@ st.part = {
 			case "paragraph":
 				h += that.renderTextPart(part);
 				break;
-			case "variable":
-				h += that.renderVariablePart(part);
+			case "var":
+				h += that.renderVarPart(part);
 				break;
 			default:
 				alert("Error: unknown part type[" + part.type + "]. [76]");
@@ -99,7 +99,7 @@ st.part = {
 			+ "</p>\n";
 		return h;
 	},
-	renderVariablePart: function(part) {
+	renderVarPart: function(part) {
 		var that = st.part;
 		var story = st.story;
 		story.vars[part.name] = part.value;
@@ -108,16 +108,26 @@ st.part = {
 			+ part.name
 			+ "="
 			+ part.value
-			+ "[<span class=\"st-variable-" + (_.slugify(part.name)) + "\">" + (story.vars[part.name]) + "</span>]"
+			+ "[<span class=\"st-var-" + (_.slugify(part.name)) + "\">" + (story.vars[part.name]) + "</span>]"
 			+ "</div>\n";
 		return h;
 	},
 	isPartSatisfied: function(part) {
+		st.log("checking isPartSatisfied, part.id[" + part.id + "]");
 		var story = st.story;
+		var vars = story.vars
+
+		// default is true, optimistic
 		var ret = true;
+		
+		// if condition, evaluate it in the current variable context.
 		if (part.condition) {
-			;
+			var cond = part.condition.replace(/\[/g, "\[\'").replace(/\]/g, "\'\]");
+			st.log(cond)
+			ret = eval(cond);
+			st.log("ret[" + ret + "]");
 		}
+		
 		return ret;
 	}
 }
